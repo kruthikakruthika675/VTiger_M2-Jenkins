@@ -1,0 +1,33 @@
+package testCaseRepo;
+
+import java.io.IOException;
+
+import org.apache.poi.EncryptedDocumentException;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
+
+import genericUtility.BaseClass;
+import objectRepo.CreatingNewLeadPage;
+import objectRepo.HomePage;
+import objectRepo.LeadsPage;
+
+@Listeners(genericUtility.ListenersImplementation.class)
+public class TC_001 extends BaseClass{
+	
+	@Test(groups= {"Regression" , "Sanity"})
+	public void LE_001() throws EncryptedDocumentException, IOException {
+		HomePage hp = new HomePage(driver);
+		hp.clickOnLeadsMenu();
+		LeadsPage lp = new LeadsPage(driver);
+		lp.clickOnCreateNewLeadIcon();
+		Assert.fail();
+		String fName = eUtil.getSingleCellDataFromExcel("Leads", 1, 1);
+		String lName = eUtil.getSingleCellDataFromExcel("Leads", 1, 2);
+		String company = eUtil.getSingleCellDataFromExcel("Leads", 1, 3);
+		CreatingNewLeadPage cnlp = new CreatingNewLeadPage(driver);
+		cnlp.creatingNewLead(fName, lName, company);
+	}
+	
+
+}
