@@ -46,7 +46,7 @@ public class BaseClass {
 		else if(BROWSER.equals("safari"))
 			driver = new SafariDriver();
 		else
-			driver = new ChromeDriver();
+			driver = new EdgeDriver();
 		sDriver = driver; //used for listeners
 		//SeleniumUtility
 		sUtil.maximizeWindow(driver);
