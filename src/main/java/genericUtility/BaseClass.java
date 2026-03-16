@@ -38,7 +38,7 @@ public class BaseClass {
 		if(BROWSER.equals("chrome"))
 			driver = new ChromeDriver();
 		else if(BROWSER.equals("edge")) {
-			//System.setProperty("webdriver.chrome.driver",".\\src\\main\\resources\\Drivers\\chromedriver.exe");
+			System.setProperty("webdriver.chrome.driver",".\\src\\main\\resources\\Drivers\\chromedriver.exe");
 			driver = new EdgeDriver();
 		}
 		else if(BROWSER.equals("firefox"))
