@@ -35,9 +35,9 @@ public class BaseClass {
 	@Parameters("browser")
 	@BeforeClass(alwaysRun=true)
 	public void bcConfig(@Optional("edge") String BROWSER) throws IOException {
-		if(BROWSER.equals("chrome"))
+		if(BROWSER.equals("edge"))
 			driver = new ChromeDriver();
-		else if(BROWSER.equals("edge")) {
+		else if(BROWSER.equals("chrome")) {
 			//System.setProperty("webdriver.chrome.driver",".\\src\\main\\resources\\Drivers\\chromedriver.exe");
 			driver = new EdgeDriver();
 		}
